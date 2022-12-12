@@ -1,4 +1,4 @@
-import { sequelize } from "sequelize";
+import { sequelize } from "../config/sequelize.config.js";
 import { DataTypes, Model  } from "sequelize";
 
 class ReviewModel extends Model{}

@@ -4,9 +4,9 @@ import express from "express";
 class ProductController {
     list = async (req, res) => {
         const result = await ProductModel.findAll({
-            attributes: ['id', 'firstname', 'lastname'],
-            order: ['lastname'],
-            limit: 10
+            attributes: ['id', 'title', 'disc','rating', 'prize', 'category', 'createdAt', 'updatedAt'],
+            order: ['category'],
+            limit: 100
         })
         res.json(result)
     }
@@ -15,31 +15,31 @@ class ProductController {
         console.log(idss);
         const { id } = req.params || 0
         const result = await ProductModel.findOne({
-            attributes: ['id', 'firstname', 'lastname', 'email', 'createdAt', 'updatedAt'],
+            attributes: ['id', 'title', 'rating', 'prize', 'category'],
             where: { id: id }
         })
         res.json(result)
     }
 
     create = async (req, res) => {
-        const { id, firstname, lastname, email, password } = req.body;
-        console.log(firstname);
-        if (firstname && lastname && email && password) {
+        const { id, title, disc, rating, prize, category } = req.body;
+        console.log(title);
+        if (title && disc && prize && category) {
             const model = await ProductModel.create(req.body)
-            return res.json({ newId: model.id, NewName: model.firstname, NewLastName: model.lastname })
+            return res.json({ newId: model.id })
         } else {
             res.sendStatus(418)
         }
     }
 
     update = async (req, res) => {
-        const { id, firstname} = req.body;
+        const { id, title} = req.body;
         ProductModel.update(
-            { firstname: firstname },
+            { title: title },
             { where: { id: id } }
           )
-          if (firstname) {
-            console.log(firstname, id);
+          if (title) {
+            console.log(title, id);
             res.sendStatus(200)
           }
     }

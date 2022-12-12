@@ -16,11 +16,11 @@ ProductRouter.get('/products', (req,res) => {
    controller.create(req,res)
 })
 
-ProductRouter.put('/Products', (req,res) => { 
+ProductRouter.put('/products', (req,res) => { 
    controller.update(req,res)
 })
 
-ProductRouter.delete('/Products', (req,res) => { 
+ProductRouter.delete('/products', (req,res) => { 
    controller.delete(req,res)
 })
 
