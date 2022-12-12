@@ -1,6 +1,7 @@
 {
   "name": "hundehimlen",
   "version": "1.0.0",
+  "type": "module",
   "description": "Kategorier:\r - Snacks\r - Udstyr\r - Foder\r - Legetøj",
   "main": "index.js",
   "scripts": {
