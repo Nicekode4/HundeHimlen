@@ -1,0 +1,27 @@
+{
+  "name": "hundehimlen",
+  "version": "1.0.0",
+  "description": "Kategorier:\r - Snacks\r - Udstyr\r - Foder\r - Legetøj",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicekode4/HundeHimlen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicekode4/HundeHimlen/issues"
+  },
+  "homepage": "https://github.com/Nicekode4/HundeHimlen#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.26.0"
+  }
+}
