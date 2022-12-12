@@ -16,11 +16,11 @@ ReviewRouter.get('/reviews', (req,res) => {
    controller.create(req,res)
 })
 
-ReviewRouter.put('/Reviews', (req,res) => { 
+ReviewRouter.put('/reviews', (req,res) => { 
    controller.update(req,res)
 })
 
-ReviewRouter.delete('/Reviews', (req,res) => { 
+ReviewRouter.delete('/reviews', (req,res) => { 
    controller.delete(req,res)
 })
 

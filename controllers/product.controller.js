@@ -4,7 +4,7 @@ import express from "express";
 class ProductController {
     list = async (req, res) => {
         const result = await ProductModel.findAll({
-            attributes: ['id', 'title', 'disc','rating', 'prize', 'category', 'createdAt', 'updatedAt'],
+            attributes: ['id', 'title', 'disc','rating', 'prize', 'category', 'image', 'createdAt', 'updatedAt'],
             order: ['category'],
             limit: 100
         })

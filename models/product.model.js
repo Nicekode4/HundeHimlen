@@ -30,6 +30,10 @@ ProductModel.init({
         type: DataTypes.STRING,
         allowNull: true
     },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     createdAt: {
         type: DataTypes.DATE,
         allowNull: false
