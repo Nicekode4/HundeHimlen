@@ -1,9 +1,9 @@
-import UserModel from "../models/user.model.js";
+import ProductModel from "../models/product.model.js";
 import express from "express";
 
-class UserController {
+class ProductController {
     list = async (req, res) => {
-        const result = await UserModel.findAll({
+        const result = await ProductModel.findAll({
             attributes: ['id', 'firstname', 'lastname'],
             order: ['lastname'],
             limit: 10
@@ -14,7 +14,7 @@ class UserController {
         const idss = req.query.id;
         console.log(idss);
         const { id } = req.params || 0
-        const result = await UserModel.findOne({
+        const result = await ProductModel.findOne({
             attributes: ['id', 'firstname', 'lastname', 'email', 'createdAt', 'updatedAt'],
             where: { id: id }
         })
@@ -25,7 +25,7 @@ class UserController {
         const { id, firstname, lastname, email, password } = req.body;
         console.log(firstname);
         if (firstname && lastname && email && password) {
-            const model = await UserModel.create(req.body)
+            const model = await ProductModel.create(req.body)
             return res.json({ newId: model.id, NewName: model.firstname, NewLastName: model.lastname })
         } else {
             res.sendStatus(418)
@@ -34,7 +34,7 @@ class UserController {
 
     update = async (req, res) => {
         const { id, firstname} = req.body;
-        UserModel.update(
+        ProductModel.update(
             { firstname: firstname },
             { where: { id: id } }
           )
@@ -46,7 +46,7 @@ class UserController {
 
     delete = async (req,res) => {
         const { id } = req.body;
-        UserModel.destroy({
+        ProductModel.destroy({
             where: {
                 id: id
             }
@@ -55,4 +55,4 @@ class UserController {
         res.sendStatus(200)
     }
 }
-export default UserController
+export default ProductController

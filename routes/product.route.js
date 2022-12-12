@@ -1,28 +1,28 @@
 import express from "express";
-import UserController from '../controllers/user.controller.js'
+import ProductController from '../controllers/product.controller.js'
 
-const UserRouter = express.Router()
-const controller = new UserController()
+const ProductRouter = express.Router()
+const controller = new ProductController()
 
-UserRouter.get('/users', (req,res) => { 
+ProductRouter.get('/products', (req,res) => { 
     controller.list(req,res)
  })
 
- UserRouter.get('/users/:id([0-9]*)', (req,res) => { 
+ ProductRouter.get('/products/:id([0-9]*)', (req,res) => { 
     controller.details(req,res)
  })
 
- UserRouter.post('/users', (req,res) => { 
+ ProductRouter.post('/products', (req,res) => { 
    controller.create(req,res)
 })
 
-UserRouter.put('/users', (req,res) => { 
+ProductRouter.put('/Products', (req,res) => { 
    controller.update(req,res)
 })
 
-UserRouter.delete('/users', (req,res) => { 
+ProductRouter.delete('/Products', (req,res) => { 
    controller.delete(req,res)
 })
 
 
-export default UserRouter
+export default ProductRouter

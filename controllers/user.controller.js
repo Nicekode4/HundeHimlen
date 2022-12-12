@@ -4,7 +4,6 @@ import express from "express";
 class UserController {
     list = async (req, res) => {
         const result = await UserModel.findAll({
-            attributes: ['id', 'firstname', 'lastname'],
             order: ['lastname'],
             limit: 10
         })
@@ -22,14 +21,15 @@ class UserController {
     }
 
     create = async (req, res) => {
-        const { id, firstname, lastname, email, password } = req.body;
-        console.log(firstname);
-        if (firstname && lastname && email && password) {
-            const model = await UserModel.create(req.body)
-            return res.json({ newId: model.id, NewName: model.firstname, NewLastName: model.lastname })
-        } else {
-            res.sendStatus(418)
-        }
+        
+         const { id, firstname, lastname, email, password } = req.body;
+         console.log(firstname);
+         if (firstname && lastname && email && password) {
+             const model = await UserModel.create(req.body)
+             return res.json({ newId: model.id, NewName: model.firstname, NewLastName: model.lastname })
+         } else {
+             res.sendStatus(418)
+         }
     }
 
     update = async (req, res) => {
