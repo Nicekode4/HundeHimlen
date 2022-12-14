@@ -39,7 +39,7 @@ app.get('/', (req,res) => {
  })
 
  app.get('/about', (req,res) => { 
-    fs.readFile('./views/about.html', null, function (error, data) {
+    fs.readFile('./views/about.ejs', null, function (error, data) {
         if (error) {
             res.writeHead(404);
             respone.write('Whoops! File not found!');
@@ -50,6 +50,28 @@ app.get('/', (req,res) => {
     });
  })
 
+ app.get('/login', (req,res) => { 
+    fs.readFile('./views/login.ejs', null, function (error, data) {
+        if (error) {
+            res.writeHead(404);
+            respone.write('Whoops! File not found!');
+        } else {
+            res.write(data);
+        }
+        res.end();
+    });
+ })
+ app.get('/register', (req,res) => { 
+    fs.readFile('./views/register.ejs', null, function (error, data) {
+        if (error) {
+            res.writeHead(404);
+            respone.write('Whoops! File not found!');
+        } else {
+            res.write(data);
+        }
+        res.end();
+    });
+ })
 app.listen(port, () => {
     console.log(`Webserver running on http://localhost:${port}`);
 })

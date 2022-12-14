@@ -1,0 +1,27 @@
+html {
+  background-image: url("../assets/pexels-lucas-andrade-13095645.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  height: 50vh;
+  display: flex;
+}
+header nav {
+  display: flex;
+  margin-left: 40vw;
+}
+header nav li {
+  list-style: none;
+  margin-left: 1vw;
+  color: white;
+  font-size: 25px;
+}
+header img {
+  height: 20vh;
+}
+
+form input {
+  display: block;
+}/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/register.css" type="text/css">
+    <script src="./js/forside.js" defer></script>
+    <title>Forside</title>
+</head>
+<body>
+    <header>
+        <div><img src="./assets/dogLogo.png" alt=""></div>
+        <nav>
+            <li><a href="/">Forside</a></li>
+            <li><a href="/about">Om os</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Registrer</a></li>
+        </nav>
+    </header>
+    <main>
+       <form action="http://localhost:3000/users" method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="">
+        <label for="password">password</label>
+        <input type="password" name="password" id="">
+        <label for="firstname">fornavn</label>
+        <input type="text" name="firstname">
+        <label for="lastname">efternavn</label>
+        <input type="text" name="lastname">
+        <button type="submit">Opret</button>
+        <button type="reset">Slet alt</button>
+       </form>
+    </main>
+</body>
+</html>
