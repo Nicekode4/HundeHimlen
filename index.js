@@ -22,7 +22,11 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.use(cookieParser())
-app.use(session({secret: 'its a secret!'}))
+app.use(session({
+    secret: 'its a secret!',
+    cookie: {maxAge: 30000 },
+    saveUninitialized: false
+}))
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static(__dirname + '/views'));
 
@@ -33,13 +37,16 @@ app.use(InitRouter)
 app.use(AuthRouter)
 
 app.get('/a', function(req, res){
-    if(req.session.page_views){
-       req.session.page_views++;
-       res.send("You visited this page " + req.session.page_views + " times");
-    } else {
-       req.session.page_views = 1;
-       res.send("Welcome to this page for the first time!");
-    }
+    if (req.session.views) {
+        req.session.views++
+        res.setHeader('Content-Type', 'text/html')
+        res.write('<p>views: ' + req.session.views + '</p>')
+        res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+        res.end()
+      } else {
+        req.session.views = 1
+        res.end('welcome to the session demo. refresh!')
+      }
  });
 app.get('/', (req,res) => { 
     fs.readFile('./views/index.ejs', null, function (error, data) {

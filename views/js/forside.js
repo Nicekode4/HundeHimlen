@@ -1,6 +1,5 @@
     const url = 'http://localhost:3000/products'
     let apiData;
-    console.log(process.env.PORT)
     
     fetch(url)
         .then(response => {
