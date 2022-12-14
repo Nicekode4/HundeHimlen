@@ -33,6 +33,7 @@ class UserController {
     }
 
     update = async (req, res) => {
+        
         const { id, firstname} = req.body;
         UserModel.update(
             { firstname: firstname },

@@ -33,9 +33,9 @@ class ProductController {
     }
 
     update = async (req, res) => {
-        const { id, title} = req.body;
+        const { id, title, disc, rating, prize, category } = req.body;
         ProductModel.update(
-            { title: title },
+            { title: title,  disc: disc, rating: rating, prize: prize, category: category},
             { where: { id: id } }
           )
           if (title) {

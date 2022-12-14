@@ -17,6 +17,7 @@ UserRouter.get('/users', (req,res) => {
 })
 
 UserRouter.put('/users', (req,res) => { 
+   console.log('User update called');
    controller.update(req,res)
 })
 

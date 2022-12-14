@@ -1,0 +1,62 @@
+html{
+    background-image: url('../assets/pexels-lucas-andrade-13095645.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header{
+    //background-image: url('../assets/pexels-pixabay-248307.jpg');
+    //background-size: cover;
+
+    height: 50vh;
+    display: flex;
+    nav{
+        display: flex;
+        margin-left: 40vw;
+        li{
+            list-style: none;
+            margin-left: 1vw;
+            color: white;
+            font-size: 25px;
+        }
+    }
+    img{
+        height: 20vh;
+    }
+}
+
+#category{
+    background-color: rgba(0, 0, 0, 0.303);
+    margin-top: 5vh;
+    text-align: center;
+    padding: 1vh;
+    button{
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        font-size: 25px;
+        border-color: rgba(0, 0, 0, 0.523);
+        padding: 5vh;
+        border-radius: 10px;
+        margin-right: 5vw;
+    }
+}
+
+#products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1vw;
+    padding: 15vw;
+    padding-top: 5vw;
+    article{
+        width: 15vw;
+        height: 25vh;
+        background-repeat: no-repeat;
+        background-size: contain;
+        p{
+            padding-left: 1vw;
+        }
+        h2{
+            padding-left: 1vw;
+        }
+    }
+}

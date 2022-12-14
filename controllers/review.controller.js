@@ -32,13 +32,13 @@ class ReviewController {
     }
 
     update = async (req, res) => {
-        const { id, firstname} = req.body;
+        const { id, productName} = req.body;
         ReviewModel.update(
-            { firstname: firstname },
+            { productName: productName },
             { where: { id: id } }
           )
-          if (firstname) {
-            console.log(firstname, id);
+          if (productName) {
+            console.log(productName, id);
             res.sendStatus(200)
           }
     }
