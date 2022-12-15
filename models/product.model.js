@@ -27,7 +27,7 @@ ProductModel.init({
         allowNull: true
     },
     category: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true
     },
     image: {
