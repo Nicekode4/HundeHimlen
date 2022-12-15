@@ -1,7 +1,12 @@
 import CategoryModel from "../models/category.model.js";
+import ProductModel from "../models/product.model.js"
 import express from "express";
 
+
+
 class CategoryController {
+   
+
     list = async (req, res) => {
         const result = await CategoryModel.findAll({
             attributes: ['id', 'title'],

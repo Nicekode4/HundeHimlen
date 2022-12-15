@@ -26,7 +26,7 @@ ProductModel.init({
         type: DataTypes.INTEGER,
         allowNull: true
     },
-    category: {
+    categoryId: {
         type: DataTypes.INTEGER,
         allowNull: true
     },

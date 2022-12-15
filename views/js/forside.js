@@ -30,15 +30,63 @@
         })            
         function NewCat(obj) {
             document.querySelector('#products').innerHTML = ""
-                for (let index = 0; index < apiData.length; index++) {
-                    const element = apiData[index];
-                    if (element.category === obj.innerText) {
-                       document.querySelector('#products').innerHTML += 
-                    `<article style="background-image: url('${element.image}')">
-                    <h2>${element.title}</h2>
-                    <p>${element.prize} DKK</p>
-                </article>` 
+
+            switch (obj.innerText) {
+                case 'Legetøj':
+                    for (let index = 0; index < apiData.length; index++) {
+                        const element = apiData[index];
+                        if (element.categoryId === 1) {
+                           document.querySelector('#products').innerHTML += 
+                        `<article style="background-image: url('${element.image}')">
+                        <h2>${element.title}</h2>
+                        <p>${element.prize} DKK</p>
+                    </article>` 
+                        }
+                        
                     }
-                    
-                }
+                    break;
+                    case 'Udstyr':
+                        for (let index = 0; index < apiData.length; index++) {
+                            const element = apiData[index];
+                            if (element.categoryId === 2) {
+                               document.querySelector('#products').innerHTML += 
+                            `<article style="background-image: url('${element.image}')">
+                            <h2>${element.title}</h2>
+                            <p>${element.prize} DKK</p>
+                        </article>` 
+                            }
+                            
+                        }
+                        break;
+                        case 'Foder':
+                            for (let index = 0; index < apiData.length; index++) {
+                                const element = apiData[index];
+                                if (element.categoryId === 3) {
+                                   document.querySelector('#products').innerHTML += 
+                                `<article style="background-image: url('${element.image}')">
+                                <h2>${element.title}</h2>
+                                <p>${element.prize} DKK</p>
+                            </article>` 
+                                }
+                                
+                            }
+                            break;
+                            case 'Snacks':
+                                for (let index = 0; index < apiData.length; index++) {
+                                    const element = apiData[index];
+                                    if (element.categoryId === 4) {
+                                       document.querySelector('#products').innerHTML += 
+                                    `<article style="background-image: url('${element.image}')">
+                                    <h2>${element.title}</h2>
+                                    <p>${element.prize} DKK</p>
+                                </article>` 
+                                    }
+                                    
+                                }
+                                break;
+            
+                default:
+                    break;
+            }
+
             }

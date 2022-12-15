@@ -4,6 +4,10 @@ import ProductController from '../controllers/product.controller.js'
 const ProductRouter = express.Router()
 const controller = new ProductController()
 
+ProductRouter.get('/test', (req,res) => { 
+   controller.test(req,res)
+})
+
 ProductRouter.get('/products', (req,res) => { 
     controller.list(req,res)
  })

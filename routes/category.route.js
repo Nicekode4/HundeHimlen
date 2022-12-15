@@ -4,6 +4,8 @@ import CategoryController from '../controllers/category.controller.js'
 const CategoryRouter = express.Router()
 const controller = new CategoryController()
 
+
+
 CategoryRouter.get('/category', (req,res) => { 
     controller.list(req,res)
  })
