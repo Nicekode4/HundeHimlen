@@ -1,10 +1,15 @@
 import ReviewModel from "../models/review.model.js";
+import ProductModel from "../models/product.model.js";
+import UserModel from "../models/user.model.js";
 import express from "express";
+
+ProductModel.hasMany(ReviewModel);
+UserModel.hasMany(ReviewModel);
 
 class ReviewController {
     list = async (req, res) => {
         const result = await ReviewModel.findAll({
-            attributes: ['id', 'productName', 'prodId', 'rating'],
+            attributes: ['id', 'title', 'productId', 'rating'],
             order: ['id'],
             limit: 10
         })
@@ -15,15 +20,15 @@ class ReviewController {
         console.log(idss);
         const { id } = req.params || 0
         const result = await ReviewModel.findOne({
-            attributes: ['id', 'productName', 'prodId', 'user', 'rating', 'comment', 'createdAt', 'updatedAt'],
+            attributes: ['id', 'title', 'productId', 'userId', 'rating', 'comment', 'createdAt', 'updatedAt'],
             where: { id: id }
         })
         res.json(result)
     }
 
     create = async (req, res) => {
-        const { id, productName, prodId, user, rating, comment } = req.body;
-        if (productName && prodId && user && comment && rating) {
+        const { id, title, productId, userId, rating, comment } = req.body;
+        if (title && productId && userId && comment && rating) {
             const model = await ReviewModel.create(req.body)
             return res.json({ newId: model.id})
         } else {
@@ -32,13 +37,13 @@ class ReviewController {
     }
 
     update = async (req, res) => {
-        const { id, productName} = req.body;
+        const { id, title} = req.body;
         ReviewModel.update(
-            { productName: productName },
+            { title: title },
             { where: { id: id } }
           )
-          if (productName) {
-            console.log(productName, id);
+          if (title) {
+            console.log(title, id);
             res.sendStatus(200)
           }
     }

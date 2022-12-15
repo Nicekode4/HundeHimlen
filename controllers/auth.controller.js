@@ -1,4 +1,3 @@
-import AuthModel from '../models/auth.model.js'
 import UserModel from '../models/user.model.js'
 import express from 'express'
 import bcrypt from 'bcrypt'

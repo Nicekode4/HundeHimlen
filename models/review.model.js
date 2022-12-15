@@ -11,20 +11,12 @@ ReviewModel.init({
         primaryKey: true
     },
     
-    productName: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    prodId: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    user: {
+    title: {
         type: DataTypes.STRING,
         allowNull: true
     },
     rating: {
-        type: DataTypes.STRING,
+        type: DataTypes.FLOAT,
         allowNull: true
     },
     comment: {
