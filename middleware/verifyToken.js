@@ -5,7 +5,7 @@ dotenv.config()
 
 const verifyToken = (req, res, next) => {
     const bearerHeader = req.headers['authorization']
-    if (bearerheader) {
+    if (bearerHeader) {
         console.log('token set');
         const access_token = bearerHeader.substring(7)
         jwt.verify(access_token, process.env.PRIVATE_KEY, (err, result) => {

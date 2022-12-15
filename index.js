@@ -5,7 +5,8 @@ import fs from "fs"
 import path from 'path';
 import { fileURLToPath } from 'url';
 import session from 'express-session'
-import cookieParser from 'cookie-parser' 
+import cookieParser from 'cookie-parser'
+import expressEjsLayouts from "express-ejs-layouts"; 
 
 
 import UserRouter from './routes/user.route.js'
@@ -22,6 +23,7 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use(expressEjsLayouts)
 app.use(cookieParser())
 app.use(session({
     secret: 'its a secret!',
@@ -63,15 +65,7 @@ app.get('/', (req,res) => {
  })
 
  app.get('/about', (req,res) => { 
-    fs.readFile('./views/about.ejs', null, function (error, data) {
-        if (error) {
-            res.writeHead(404);
-            respone.write('Whoops! File not found!');
-        } else {
-            res.write(data);
-        }
-        res.end();
-    });
+    res.render('./views/about')
  })
 
  app.get('/login', (req,res) => { 

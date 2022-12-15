@@ -22,7 +22,7 @@ ProductModel.init({
         type: DataTypes.FLOAT,
         allowNull: true
     },
-    prize: {
+    price: {
         type: DataTypes.INTEGER,
         allowNull: true
     },

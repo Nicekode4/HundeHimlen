@@ -21,7 +21,7 @@
                 document.querySelector('#products').innerHTML += 
                 `<article style="background-image: url('${element.image}')">
                 <h2>${element.title}</h2>
-                <p>${element.prize} DKK</p>
+                <p>${element.price} DKK</p>
             </article>`
             }
 
@@ -39,7 +39,7 @@
                            document.querySelector('#products').innerHTML += 
                         `<article style="background-image: url('${element.image}')">
                         <h2>${element.title}</h2>
-                        <p>${element.prize} DKK</p>
+                        <p>${element.price} DKK</p>
                     </article>` 
                         }
                         
@@ -52,7 +52,7 @@
                                document.querySelector('#products').innerHTML += 
                             `<article style="background-image: url('${element.image}')">
                             <h2>${element.title}</h2>
-                            <p>${element.prize} DKK</p>
+                            <p>${element.price} DKK</p>
                         </article>` 
                             }
                             
@@ -65,7 +65,7 @@
                                    document.querySelector('#products').innerHTML += 
                                 `<article style="background-image: url('${element.image}')">
                                 <h2>${element.title}</h2>
-                                <p>${element.prize} DKK</p>
+                                <p>${element.price} DKK</p>
                             </article>` 
                                 }
                                 
@@ -78,7 +78,7 @@
                                        document.querySelector('#products').innerHTML += 
                                     `<article style="background-image: url('${element.image}')">
                                     <h2>${element.title}</h2>
-                                    <p>${element.prize} DKK</p>
+                                    <p>${element.price} DKK</p>
                                 </article>` 
                                     }
                                     

@@ -37,13 +37,13 @@ class ReviewController {
     }
 
     update = async (req, res) => {
-        const { id, title} = req.body;
+        const { id, title, productId, userId, rating, comment} = req.body;
         ReviewModel.update(
-            { title: title },
+            { title: title, productId: productId, userId: userId, rating: rating, comment: comment },
             { where: { id: id } }
           )
-          if (title) {
-            console.log(title, id);
+          if (title || productId || userId || rating || comment) {
+            console.log(id);
             res.sendStatus(200)
           }
     }

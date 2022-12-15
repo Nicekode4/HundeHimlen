@@ -3,7 +3,6 @@ import CategoryModel from "../models/category.model.js";
 import express from "express";
 
 CategoryModel.hasMany(ProductModel);
-//CategoryModel.belongsTo(ProductModel);
 class ProductController {
      test = async (req, res) => {
         const result = await CategoryIdModel.findAll({
@@ -15,7 +14,7 @@ class ProductController {
     }
     list = async (req, res) => {
         const result = await ProductModel.findAll({
-            attributes: ['id', 'title', 'disc','rating', 'prize', 'categoryId', 'image', 'createdAt', 'updatedAt'],
+            attributes: ['id', 'title', 'disc','rating', 'price', 'categoryId', 'image', 'createdAt', 'updatedAt'],
             order: ['categoryId'],
             limit: 100
         })
@@ -26,16 +25,16 @@ class ProductController {
         console.log(idss);
         const { id } = req.params || 0
         const result = await ProductModel.findOne({
-            attributes: ['id', 'title', 'rating', 'prize', 'categoryId'],
+            attributes: ['id', 'title', 'rating', 'price', 'categoryId'],
             where: { id: id }
         })
         res.json(result)
     }
 
     create = async (req, res) => {
-        const { id, title, disc, rating, prize, categoryId } = req.body;
+        const { id, title, disc, rating, price, categoryId } = req.body;
         console.log(title);
-        if (title && disc && prize && categoryId) {
+        if (title && disc && price && categoryId) {
             const model = await ProductModel.create(req.body)
             return res.json({ newId: model.id })
         } else {
@@ -44,13 +43,13 @@ class ProductController {
     }
 
     update = async (req, res) => {
-        const { id, title, disc, rating, prize, categoryId } = req.body;
+        const { id, title, disc, rating, price, categoryId } = req.body;
         ProductModel.update(
-            { title: title,  disc: disc, rating: rating, prize: prize, categoryId: categoryId},
+            { title: title,  disc: disc, rating: rating, price: price, categoryId: categoryId},
             { where: { id: id } }
           )
-          if (title) {
-            console.log(title, id);
+          if (title || disc || rating || price || categoryId) {
+            console.log(id);
             res.sendStatus(200)
           }
     }

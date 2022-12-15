@@ -20,16 +20,16 @@ class CategoryController {
         console.log(idss);
         const { id } = req.params || 0
         const result = await CategoryModel.findOne({
-            attributes: ['id', 'title', 'rating', 'prize', 'category'],
+            attributes: ['id', 'title', 'rating', 'price', 'category'],
             where: { id: id }
         })
         res.json(result)
     }
 
     create = async (req, res) => {
-        const { id, title, disc, rating, prize, category } = req.body;
+        const { id, title, disc, rating, price, category } = req.body;
         console.log(title);
-        if (title && disc && prize && category) {
+        if (title && disc && price && category) {
             const model = await CategoryModel.create(req.body)
             return res.json({ newId: model.id })
         } else {
@@ -38,9 +38,9 @@ class CategoryController {
     }
 
     update = async (req, res) => {
-        const { id, title, disc, rating, prize, category } = req.body;
+        const { id, title, disc, rating, price, category } = req.body;
         CategoryModel.update(
-            { title: title,  disc: disc, rating: rating, prize: prize, category: category},
+            { title: title,  disc: disc, rating: rating, price: price, category: category},
             { where: { id: id } }
           )
           if (title) {
