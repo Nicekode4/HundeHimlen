@@ -27,8 +27,9 @@ ProductModel.init({
         allowNull: true
     },
     categoryId: {
-        type: DataTypes.INTEGER,
-        allowNull: true
+        type: DataTypes.STRING,
+        allowNull: true,
+        onDelete: 'cascade'
     },
     image: {
         type: DataTypes.STRING,

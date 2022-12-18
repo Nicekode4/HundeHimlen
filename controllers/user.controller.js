@@ -26,7 +26,7 @@ class UserController {
          console.log(firstname);
          if (firstname && lastname && email && password) {
              const model = await UserModel.create(req.body)
-             res.send('Du er nu oprettet og kan gå til forsiden.')
+             res.send('Du er nu oprettet og kan gå til forsiden.' + '<br><a href="/">Forside</a>')
              res.end()
          } else {
              res.sendStatus(418)

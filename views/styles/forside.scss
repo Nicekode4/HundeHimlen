@@ -51,7 +51,8 @@ header{
         width: 15vw;
         height: 25vh;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 100% 100%;
+        background-color: white;
         p{
             padding-left: 1vw;
         }
